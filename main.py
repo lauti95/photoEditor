@@ -1,17 +1,13 @@
-# Script for editing all images from local Images folder to new 'editedImgs' folder
-
 from PIL import Image, ImageEnhance, ImageFilter
 import os
 
-# Create output directory (insert your own path in between apostrophes)
-path = r'C:\Users\lauta\OneDrive\Imágenes'
-pathOut = r'C:\Users\lauta\OneDrive\Imágenes\editedImgs'
+# Create output directory
+path = r'C:\Users\lauta\OneDrive\Imágenes'  # insert your own path in between the apostrophes
+pathOut = r'C:\Users\lauta\OneDrive\Imágenes\editedImgs'    #insert path leaving \editedImgs at the end
 if not os.path.exists(pathOut):
     os.makedirs(pathOut)
 
-# Script
 for filename in os.listdir(path):
-
     if filename.endswith('.jpg') or filename.endswith('.png'):
         img = Image.open(f'{path}\{filename}')
 
